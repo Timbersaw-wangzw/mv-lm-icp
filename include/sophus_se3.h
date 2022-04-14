@@ -1,6 +1,6 @@
 #ifndef SOPHUS_SE3
 #define SOPHUS_SE3
-
+#include <iostream>
 #include <sophus/se3.hpp>
 #include <ceres/local_parameterization.h>
 
@@ -63,11 +63,11 @@ public:
 //https://groups.google.com/forum/#!topic/ceres-solver/a9JhUIWOn1I
 static ceres::LocalParameterization* getParameterization(bool automaticDiff){
     if(automaticDiff){
-        cout<<"automatic diff sophusSE3 local parameterization"<<endl;
+        std::cout<<"automatic diff sophusSE3 local parameterization"<<std::endl;
         return new ceres::AutoDiffLocalParameterization<SophusSE3Plus,Sophus::SE3::num_parameters, Sophus::SE3::DoF>;
     }
     else{
-        cout<<"analytic diff sophusSE3 local parameterization"<<endl;
+       std::cout<<"analytic diff sophusSE3 local parameterization"<<std::endl;
         return new LocalParameterizationSE3();
     }
 }

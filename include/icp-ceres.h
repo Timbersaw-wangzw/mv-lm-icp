@@ -113,6 +113,7 @@ struct PointToPlaneErrorGlobal{
     template <typename T>
     bool operator()(const T* const camera_rotation, const T* const camera_translation, const T* const camera_rotation_dst, const T* const camera_translation_dst, T* residuals) const {
 
+using namespace std;
         // Make sure the Eigen::Vector world point is using the ceres::Jet type as it's Scalar type
         Eigen::Matrix<T,3,1> src; src << T(p_src[0]), T(p_src[1]), T(p_src[2]);
         Eigen::Matrix<T,3,1> dst; dst << T(p_dst[0]), T(p_dst[1]), T(p_dst[2]);

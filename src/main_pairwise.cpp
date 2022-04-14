@@ -11,14 +11,13 @@
  * - ceres with eigen quaternion
  */
 
-#include "common.h"
+#include "../include/common.h"
 #include "gflags/gflags.h"
-#include "CPUTimer.h"
+#include "../include/CPUTimer.h"
 
-#include "icp-closedform.h"
-#include "icp-g2o.h"
-#include "icp-ceres.h"
-
+#include "../include/icp-closedform.h"
+#include "../include/icp-g2o.h"
+#include "../include/icp-ceres.h"
 using namespace std;
 
 DEFINE_bool(pointToPlane, false, "pointToPlane");
